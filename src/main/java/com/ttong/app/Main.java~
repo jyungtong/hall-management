@@ -1,0 +1,15 @@
+package com.ttong.app;
+
+import com.ttong.app.view.LoginView;
+import javax.swing.SwingUtilities;
+
+public class Main {
+	public static void main (String [] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				LoginView loginView = new LoginView();
+				LoginController loginController = new LoginController(loginView);
+			}
+		});
+	}
+}

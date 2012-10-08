@@ -1,0 +1,79 @@
+package com.ttong.app.view;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class AdminView {
+	private JFrame frame;
+	private JMenuBar menuBar;
+	private JMenu  actionMenu;
+	private JMenuItem exitMenuItem;
+	private JMenuItem signOutMenuItem;
+	private JTable hallTable;
+	private JPanel pnlMain;
+	private JPanel pnlHallTable;
+	private JPanel pnlDetails;
+	private JPanel pnlOptions;
+	private JButton btnAdd;
+	private JButton btnDelete;
+	private JButton btnEdit;
+	private JButton btnUpdate;
+	private JScrollPane hallTableScroll;
+	private GridBagConstraints c;
+
+	public AdminView() {
+		initUI();
+	}	
+
+	/*
+	 * Initialise the Admin form.
+	 */
+	private void initUI() {
+		frame = new JFrame("Hall Management View");
+		menuBar = new JMenuBar();
+		actionMenu = new JMenu("Action");
+		signOutMenuItem = new JMenuItem("Sign Out");
+		exitMenuItem 		= new JMenuItem("Exit");
+		pnlMain = new JPanel();
+		pnlHallTable = new JPanel();
+		pnlDetails = new JPanel();
+		pnlOptions = new JPanel();
+		hallTable = new JTable();
+		btnAdd = new JButton("Add");
+		btnDelete = new JButton("Delete");
+		btnAdd = new JButton("Edit");
+		btnUpdate = new JButton("Update");
+		hallTableScroll = new JScrollPane(hallTable);
+		c = new GridBagConstraints();
+
+		pnlHallTable.setLayout(new BorderLayout());
+		pnlHallTable.setBorder(BorderFactory.createTitledBorder("Hall Table"));
+		pnlHallTable.add(hallTableScroll, BorderLayout.CENTER);
+
+		pnlOptions.setLayout(new BorderLayout());
+		pnlOptions.setBorder(BorderFactory.createTitledBorder("Details"));
+		
+		pnlDetails.setLayout(new BorderLayout());
+		pnlDetails.setBorder(BorderFactory.createTitledBorder("Details"));
+
+		pnlMain.setLayout(new GridBagLayout());
+
+		c.gridx = 0;
+		c.gridy = 0;
+		c.ipady = 100;
+		pnlMain.add(pnlHallTable, c);
+
+		frame.setSize(800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setJMenuBar(menuBar);
+		frame.getContentPane().add(pnlMain);
+
+		menuBar.add(actionMenu);
+		actionMenu.add(exitMenuItem);
+		actionMenu.add(signOutMenuItem);
+
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+
+	}
+}

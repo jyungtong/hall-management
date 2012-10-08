@@ -1,0 +1,45 @@
+package com.ttong.app.view;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class AdminFrame {
+	private JFrame frame;
+	private JMenuBar menuBar;
+	private JMenuItem actionMenuItem;
+	private JMenu  exitMenu;
+	private JMenu  signOutMenu;
+	private JTable hallTable;
+	private JPanel pnlMain;
+	private JPanel pnlHallTable;
+	private JButton btnAdd;
+	private JButton btnDelete;
+	private JButton btnEdit;
+	private JButton btnUpdate;
+
+	public AdminFrame() {
+		initUI();
+	}	
+
+	/*
+	 * Initialise the Admin form.
+	 */
+	private void initUI() {
+		frame = new JFrame("Hall Management View");
+		menuBar = new JMenuBar();
+		actionMenuItem = new JMenuItem("Action");
+		exitMenu = new JMenu("Exit");
+		signOutMenu = new JMenu("Sign Out");
+
+		frame.setLocationRelativeTo(null);
+		frame.setSize(800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setMenuBar(menuBar);
+
+		menuBar.add(actionMenuItem);
+		actionMenuItem.add(exitMenu);
+		actionMenuItem.add(signOutMenu);
+
+		frame.setVisible(true);
+	}
+}
