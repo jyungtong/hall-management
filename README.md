@@ -8,7 +8,7 @@ a school assignment with simple java swing interface
 
 ## OR
 
-> javac -d target/classes src/com/ttong/app/*.java src/com/ttong/app/**/*.java
+> javac -d target/classes src/com/ttong/app/\*.java src/com/ttong/app/\*\*/\*.java
 
 # Run
 
